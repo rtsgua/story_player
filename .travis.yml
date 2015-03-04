@@ -1,14 +1,18 @@
 language: node_js
 node_js:
   - "0.10"
+  
+env:
+  global:
+    - REPO="rtsgua/story_player"
+    - CI_HOME=`pwd`/$REPO/frontend
 
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - cd frontend
   - npm install --quiet -g grunt-cli karma bower
   - npm install
   - bower install
 
-script: (cd frontend && grunt)
+script: grunt
 
