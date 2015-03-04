@@ -1,16 +1,11 @@
 language: node_js
 node_js:
   - "0.10"
-  
-env:
-  FrontEnd="frontend"
 
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - cd $FrontEnd && npm install --quiet -g grunt-cli karma bower
-  - cd $FrontEnd && npm install
-  - cd $FrontEnd && bower install
+  - frontend-before.sh
 
-script: cd $FrontEnd && grunt
+script: frontend-grunt.sh
 
