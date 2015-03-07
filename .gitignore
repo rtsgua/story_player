@@ -107,3 +107,9 @@ docs/_build/
 target/
 
 
+### ngBoilerplate template
+*.sw*
+*~
+bin/
+node_modules/
+vendor/
